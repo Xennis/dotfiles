@@ -8,6 +8,10 @@ cd ~/dotfiles
 ./setup.sh
 ```
 
+#### Dependencies
+
+* git: vim, meld
+
 ## Resources
 
 Setup script

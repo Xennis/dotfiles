@@ -7,15 +7,20 @@
     re = rebase --interactive
     st = status
     # Commit
-    ci = commit -m
+    ci = commit --message
+    aa = commit --all --amend --no-edit
     amend = commit --amend
     save = !git add -all && git commit -m 'SAVEPOINT'
     wip = !git add -u && git commit -m "WIP"
     wipe = !git add --all && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
-[push]
-    default = matching
+    # Gerrit
+    preview = !sh -c 'git push origin HEAD$2:refs/for/$1' -
 [core]
     editor = vim
+[merge]
+    tool = meld
+[push]
+    default = matching
 [include]
     # Use separate file for username etc.
     path = ~/.gitconfig.local

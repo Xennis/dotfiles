@@ -98,6 +98,7 @@ DOTFILES_BACKUP_DIR="${DOTFILES_DIR}_old"
 declare -a FILES_TO_SYMLINK=(
   'git/gitconfig'
 
+  'shell/bashrc'
   'shell/shell_aliases'
   'shell/shell_exports'
   'shell/shell_functions'

@@ -1,0 +1,10 @@
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+if [ -f ~/.shellrc ]; then
+	. ~/.shellrc
+fi
+
+if [ -f ~/.bashrc.local ]; then
+	. ~/.bashrc.local
+fi

@@ -2,4 +2,4 @@
 export EDITOR='vim'
 
 # Show Git branch
-export PS1='\u@$HOSTNAME \w$(__git_ps1 " (%s)")$ '
+export PS1='[\u@\h \W]$(__git_ps1 " (%s)")$ '

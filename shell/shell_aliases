@@ -2,7 +2,7 @@
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
-# List diretory contents
+# List directory contents
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
@@ -10,3 +10,11 @@ alias l='ls -CF'
 # Navigation
 alias ..="cd .."
 alias ...="cd ../.."
+
+# Archive
+alias untar='tar -xvzf'
+
+# Arch Linux
+if type pacman > /dev/null; then
+  alias pacman='sudo pacman --color=auto'
+fi

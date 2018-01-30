@@ -7,3 +7,8 @@ fi
 if [ -f ~/.shell_functions ]; then
     . ~/.shell_functions
 fi
+
+
+if [ -f /usr/share/git/completion/git-prompt.sh ]; then
+    . /usr/share/git/completion/git-prompt.sh
+fi

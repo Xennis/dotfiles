@@ -1,0 +1,9 @@
+if [ -f ~/.shell_exports ]; then
+    . ~/.shell_exports
+fi
+if [ -f ~/.shell_aliases ]; then
+    . ~/.shell_aliases
+fi
+if [ -f ~/.shell_functions ]; then
+    . ~/.shell_functions
+fi

@@ -1,0 +1,8 @@
+find() {
+    command find "$@" 2>/dev/null
+}
+
+# Set title of terminal
+set_terminal_title() {
+    echo -en "\033]0;$1\a"
+}

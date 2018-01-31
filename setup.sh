@@ -104,6 +104,7 @@ declare -a FILES_TO_SYMLINK=(
   'shell/shell_exports'
   'shell/shell_functions'
   'shell/shellrc'
+  'shell/zshrc'
 
   'vim/vimrc'
 )

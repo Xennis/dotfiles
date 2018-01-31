@@ -1,14 +1,9 @@
 if [ -f ~/.shell_exports ]; then
-    . ~/.shell_exports
+    source ~/.shell_exports
 fi
 if [ -f ~/.shell_aliases ]; then
-    . ~/.shell_aliases
+    source ~/.shell_aliases
 fi
 if [ -f ~/.shell_functions ]; then
-    . ~/.shell_functions
-fi
-
-
-if [ -f /usr/share/git/completion/git-prompt.sh ]; then
-    . /usr/share/git/completion/git-prompt.sh
+    source ~/.shell_functions
 fi

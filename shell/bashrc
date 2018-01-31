@@ -2,9 +2,39 @@
 [[ $- != *i* ]] && return
 
 if [ -f ~/.shellrc ]; then
-	. ~/.shellrc
+	source ~/.shellrc
+fi
+if [ -f ~/.bashrc.local ]; then
+	source ~/.bashrc.local
 fi
 
-if [ -f ~/.bashrc.local ]; then
-	. ~/.bashrc.local
+# Git prompt
+if [ -f /usr/share/git/completion/git-prompt.sh ]; then
+  source /usr/share/git/completion/git-prompt.sh
 fi
+
+
+###############################################################################
+# Exports
+###############################################################################
+
+# Show Git branch
+export PS1='[\u@\h \W]$(__git_ps1 " (%s)")$ '
+
+
+###############################################################################
+# Aliases
+###############################################################################
+
+# Colors
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+
+# List directory contents
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Change working diretory
+alias ..="cd .."
+alias ...="cd ../.."

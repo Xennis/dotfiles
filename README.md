@@ -11,6 +11,7 @@ cd ~/dotfiles
 #### Dependencies
 
 * git: vim, meld
+* zsh: powerline-fonts
 
 ## Resources
 

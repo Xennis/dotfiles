@@ -2,6 +2,6 @@
 alias untar='tar -xvzf'
 
 # Arch Linux
-if type pacman > /dev/null; then
+if command -v pacman > /dev/null; then
   alias pacman='sudo pacman --color=auto'
 fi

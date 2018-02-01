@@ -18,4 +18,9 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-source ~/.shellrc
+if [ -f ~/.shellrc ]; then
+	source ~/.shellrc
+fi
+if [ -f ~/.bashrc.local ]; then
+	source ~/.zshrc.local
+fi

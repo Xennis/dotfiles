@@ -7,3 +7,6 @@ fi
 if [ -f ~/.shell_functions ]; then
     source ~/.shell_functions
 fi
+if [ -f ~/.shellrc.local ]; then
+    source ~/.shellrc.local
+fi

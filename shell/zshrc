@@ -21,6 +21,6 @@ source $ZSH/oh-my-zsh.sh
 if [ -f ~/.shellrc ]; then
 	source ~/.shellrc
 fi
-if [ -f ~/.bashrc.local ]; then
+if [ -f ~/.zshrc.local ]; then
 	source ~/.zshrc.local
 fi

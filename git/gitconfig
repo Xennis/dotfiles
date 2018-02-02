@@ -17,6 +17,7 @@
     preview = !sh -c 'git push origin HEAD$2:refs/for/$1' -
 [core]
     editor = vim
+	pager = cat
 [merge]
     tool = meld
 [push]

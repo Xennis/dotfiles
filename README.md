@@ -8,8 +8,14 @@ cd ~/dotfiles
 ./setup.sh
 ```
 
+Manual step for linking awesome configuration
+```sh
+ln -fs $(pwd)/config/awesome $HOME/.config/awesome
+```
+
 #### Dependencies
 
+* awesome: termite
 * git: vim, meld
 * zsh: powerline-fonts
 

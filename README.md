@@ -16,7 +16,7 @@ ln -fs $(pwd)/config/termite $HOME/.config/termite
 
 #### Dependencies
 
-* awesome: termite
+* awesome: chromium, termite
 * git: vim, meld
 * zsh: powerline-fonts
 

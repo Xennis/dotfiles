@@ -53,14 +53,14 @@ clone_repository() {
 
 move_existing_dotfiles() {
   local dotfiles_backup_dir=$1
-  #local files_to_symlink=$2
+  local files_to_symlink=("${@:2}")
 
   if [ ! -d "${dotfiles_backup_dir}" ]; then
     print_info "Create $dotfiles_backup_dir for backup"
     mkdir -p "$dotfiles_backup_dir"
   fi
 
-  for i in "${FILES_TO_SYMLINK[@]}"; do
+  for i in "${files_to_symlink[@]}"; do
     dot_file=~/.${i##*/}
     # Check file exists and is not a link
     if [ -f "${dot_file}" ] && [ ! -L "${dot_file}" ]; then
@@ -71,9 +71,9 @@ move_existing_dotfiles() {
 }
 
 create_symbolic_links() {
-  #local files_to_symlink=$1
+  local files_to_symlink=("$@")
 
-  for i in "${FILES_TO_SYMLINK[@]}"; do
+  for i in "${files_to_symlink[@]}"; do
     sourceFile="$(pwd)/$i"
     targetFile="$HOME/.$(printf "%s" "$i" | sed "s/.*\/\(.*\)/\1/g")"
 
@@ -109,9 +109,15 @@ declare -a FILES_TO_SYMLINK=(
   'vim/vimrc'
 )
 
+declare -a CONFIG_DIRS_TO_SYMLINK=(
+  #'awesome'
+  'terminator'
+  #'termite'
+)
+
 print_info "Change to ${DOTFILES_DIR}"
 clone_repository "${DOTFILES_DIR}"
 cd "${DOTFILES_DIR}" || exit
 
-move_existing_dotfiles "$DOTFILES_BACKUP_DIR"
-create_symbolic_links
+move_existing_dotfiles "${DOTFILES_BACKUP_DIR}" "${FILES_TO_SYMLINK[@]}"
+create_symbolic_links "${FILES_TO_SYMLINK[@]}"

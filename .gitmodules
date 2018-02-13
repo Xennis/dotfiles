@@ -2,5 +2,5 @@
 	path = shell/oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh
 [submodule "config/awesome"]
-	path = config/awesome
+	path = .config/awesome
 	url = https://github.com/Xennis/awesome-copycats

@@ -51,23 +51,47 @@ clone_repository() {
   fi
 }
 
-move_existing_dotfiles() {
+move_existing_file() {
   local dotfiles_backup_dir=$1
-  local files_to_symlink=("${@:2}")
+  local file=$2
 
   if [ ! -d "${dotfiles_backup_dir}" ]; then
     print_info "Create $dotfiles_backup_dir for backup"
     mkdir -p "$dotfiles_backup_dir"
   fi
 
+  # Check file (or dir) exists and is not a link
+  if [[ -f "${file}" || -d "${file}" ]] && [ ! -L "${file}" ]; then
+    print_info "Move ${file} to ${dotfiles_backup_dir}"
+    mv "${file}" "${dotfiles_backup_dir}/"
+  fi
+}
+
+move_existing_files() {
+  local dotfiles_backup_dir=$1
+  local files_to_symlink=("${@:2}")
+
   for i in "${files_to_symlink[@]}"; do
-    dot_file=~/.${i##*/}
-    # Check file exists and is not a link
-    if [ -f "${dot_file}" ] && [ ! -L "${dot_file}" ]; then
-      print_info "Move ${dot_file} to ${dotfiles_backup_dir}"
-      mv "${dot_file}" "${dotfiles_backup_dir}/"
+    if [[ $i == .* ]]; then
+      targetFile=~/$i
+    else
+      targetFile=~/.${i##*/}
     fi
+    move_existing_file "$dotfiles_backup_dir" "$targetFile"
   done
+}
+
+create_symbolic_link() {
+  local sourceFile=$1
+  local targetFile=$2
+
+  if [ ! -e "$targetFile" ]; then
+    execute "ln -fs $sourceFile $targetFile" "$targetFile → $sourceFile"
+  elif [ "$(readlink "$targetFile")" == "$sourceFile" ]; then
+    print_success "$targetFile → $sourceFile"
+  else
+    print_error "$targetFile → $sourceFile"
+  fi
 }
 
 create_symbolic_links() {
@@ -75,15 +99,12 @@ create_symbolic_links() {
 
   for i in "${files_to_symlink[@]}"; do
     sourceFile="$(pwd)/$i"
-    targetFile="$HOME/.$(printf "%s" "$i" | sed "s/.*\/\(.*\)/\1/g")"
-
-    if [ ! -e "$targetFile" ]; then
-      execute "ln -fs $sourceFile $targetFile" "$targetFile → $sourceFile"
-    elif [ "$(readlink "$targetFile")" == "$sourceFile" ]; then
-      print_success "$targetFile → $sourceFile"
+    if [[ $i == .* ]]; then
+      targetFile="$HOME/$i"
     else
-      print_error "$targetFile → $sourceFile"
+      targetFile="$HOME/.$(printf "%s" "$i" | sed "s/.*\/\(.*\)/\1/g")"
     fi
+    create_symbolic_link "$sourceFile" "$targetFile"
   done
 }
 
@@ -96,6 +117,10 @@ DOTFILES_DIR="$HOME/dotfiles"
 DOTFILES_BACKUP_DIR="${DOTFILES_DIR}_old"
 
 declare -a FILES_TO_SYMLINK=(
+  '.config/awesome'
+  '.config/terminator'
+  '.config/termite'
+
   'git/gitconfig'
 
   'shell/oh-my-zsh'
@@ -109,15 +134,9 @@ declare -a FILES_TO_SYMLINK=(
   'vim/vimrc'
 )
 
-declare -a CONFIG_DIRS_TO_SYMLINK=(
-  #'awesome'
-  'terminator'
-  #'termite'
-)
-
 print_info "Change to ${DOTFILES_DIR}"
 clone_repository "${DOTFILES_DIR}"
 cd "${DOTFILES_DIR}" || exit
 
-move_existing_dotfiles "${DOTFILES_BACKUP_DIR}" "${FILES_TO_SYMLINK[@]}"
+move_existing_files "${DOTFILES_BACKUP_DIR}" "${FILES_TO_SYMLINK[@]}"
 create_symbolic_links "${FILES_TO_SYMLINK[@]}"

@@ -8,13 +8,6 @@ cd ~/dotfiles
 ./setup.sh
 ```
 
-Manual step for linking awesome and termite configuration
-```sh
-ln -fs $(pwd)/config/awesome $HOME/.config/awesome
-ln -fs $(pwd)/config/terminator $HOME/.config/terminator
-ln -fs $(pwd)/config/termite $HOME/.config/termite
-```
-
 #### Dependencies
 
 * awesome: chromium, termite

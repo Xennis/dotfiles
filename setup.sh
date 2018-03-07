@@ -118,6 +118,7 @@ DOTFILES_BACKUP_DIR="${DOTFILES_DIR}_old"
 
 declare -a FILES_TO_SYMLINK=(
   '.config/awesome'
+  '.config/base16-shell'
   '.config/terminator'
   '.config/termite'
 

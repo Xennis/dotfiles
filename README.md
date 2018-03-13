@@ -3,7 +3,7 @@
 ## Installation
 
 ```sh
-git clone --recursive https://github.com/Xennis/dotfiles ~/dotfiles
+git clone --recurse-submodules https://github.com/Xennis/dotfiles ~/dotfiles
 cd ~/dotfiles
 ./setup.sh
 ```

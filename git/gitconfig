@@ -11,7 +11,7 @@
     aa = commit --all --amend --no-edit
     amend = commit --amend
     save = !git add -all && git commit -m 'SAVEPOINT'
-    wip = !git add -u && git commit -m "WIP"
+    wip = !git add --update && git commit --message "WIP"
     wipe = !git add --all && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
     # Gerrit
     preview = !sh -c 'git push origin HEAD$2:refs/for/$1' -

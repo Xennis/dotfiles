@@ -1,7 +1,9 @@
 # Archive
 alias untar='tar -xvzf'
 
-# Arch Linux
+# Arch Linux only
 if command -v pacman > /dev/null; then
   alias pacman='sudo pacman --color=auto'
+  # System update
+  alias update='pacman -Syu --noconfirm'
 fi

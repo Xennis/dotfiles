@@ -18,5 +18,5 @@ cd ~/dotfiles
 
 * Setup script based on [Nick Plekhanov's dotfiles](https://github.com/nicksp/dotfiles/)
 * Color scheme from
-** Terminator: [Solarized terminator colors](https://github.com/ghuntley/terminator-solarized)
-** Termite: [Solarized color scheme for Termite](https://github.com/alpha-omega/termite-colors-solarized)
+  * Terminator: [Solarized terminator colors](https://github.com/ghuntley/terminator-solarized)
+  * Termite: [Solarized color scheme for Termite](https://github.com/alpha-omega/termite-colors-solarized)

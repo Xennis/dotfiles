@@ -13,6 +13,7 @@
     save = !git add -all && git commit -m 'SAVEPOINT'
     wip = !git add --update && git commit --message "WIP"
     wipe = !git add --all && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+    search = log -5 --grep
     # Gerrit
     preview = !sh -c 'git push origin HEAD$2:refs/for/$1' -
 [core]

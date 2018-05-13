@@ -1,0 +1,42 @@
+"*":
+  core:
+    disabledPackages: [
+      "spell-check"
+      "minimap-highlight-selected"
+      "metrics"
+    ]
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      "*.pyc"
+    ]
+    telemetryConsent: "no"
+  editor:
+    fontSize: 15
+    showInvisibles: true
+    tabLength: 4
+    tabType: "soft"
+  "exception-reporting":
+    ignoreErrorCodes: [
+      "D100"
+      "D101"
+      "D102"
+      "D103"
+      "E501"
+    ]
+    userId: "10eca1c7-ce73-4ab7-a7f2-b7a98c7b94c8"
+  "linter-ui-default":
+    showPanel: true
+  minimap:
+    plugins:
+      "highlight-selected": true
+      "highlight-selectedDecorationsZIndex": 0
+  "tabs-to-spaces": {}
+  "tree-view":
+    hideIgnoredNames: true
+  welcome:
+    showOnStartup: false

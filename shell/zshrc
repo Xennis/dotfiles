@@ -18,6 +18,12 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+# Trim promt dir to the last two directories
+prompt_dir() {
+  prompt_segment blue black '%2~'
+}
+
+
 if [ -f ~/.shellrc ]; then
 	source ~/.shellrc
 fi

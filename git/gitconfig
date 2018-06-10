@@ -8,6 +8,7 @@
     st = status
     # Commit
     ci = commit --message
+    cia = commit --all --message
     aa = commit --all --amend --no-edit
     amend = commit --amend
     save = !git add -all && git commit -m 'SAVEPOINT'
@@ -18,7 +19,7 @@
     preview = !sh -c 'git push origin HEAD$2:refs/for/$1' -
 [core]
     editor = vim
-	pager = cat
+    pager = cat
 [merge]
     tool = meld
 [push]

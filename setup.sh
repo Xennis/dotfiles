@@ -121,6 +121,7 @@ declare -a FILES_TO_SYMLINK=(
 
   '.config/awesome'
   '.config/base16-shell'
+  '.config/Code/User/settings.json'
   '.config/terminator'
   '.config/termite'
 

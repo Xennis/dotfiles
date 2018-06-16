@@ -1,6 +1,7 @@
 {
     "explorer.confirmDragAndDrop": false,
     "extensions.ignoreRecommendations": false,
+    "telemetry.enableTelemetry": false,
     "window.zoomLevel": 1,
     "workbench.editor.enablePreview": false
 }

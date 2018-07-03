@@ -1,6 +1,11 @@
 // Place your key bindings in this file to overwrite the defaults
 [
     {
+        "key": "f10",
+        "command": "editor.action.goToDeclaration",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
+    {
         "key": "ctrl+[Comma]",
         "command": "go.test.coverage"
     }

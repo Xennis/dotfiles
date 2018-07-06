@@ -8,5 +8,13 @@
     {
         "key": "ctrl+[Comma]",
         "command": "go.test.coverage"
-    }
+    },
+    {
+        "key": "alt+b",
+        "command": "workbench.action.terminal.focusPrevious"
+    },
+    {
+        "key": "alt+n",
+        "command": "workbench.action.terminal.focusNext"
+    },
 ]

@@ -117,8 +117,6 @@ DOTFILES_DIR="$HOME/dotfiles"
 DOTFILES_BACKUP_DIR="${DOTFILES_DIR}_old"
 
 declare -a FILES_TO_SYMLINK=(
-  '.atom/config.cson'
-
   '.config/awesome'
   '.config/base16-shell'
   '.config/Code/User/keybindings.json'

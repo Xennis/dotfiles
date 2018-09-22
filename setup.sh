@@ -116,6 +116,9 @@ create_symbolic_links() {
 DOTFILES_DIR="$HOME/dotfiles"
 DOTFILES_BACKUP_DIR="${DOTFILES_DIR}_old"
 
+# Create directory for VS Code configuration
+mkdir -p "$HOME/.config/Code/User"
+
 declare -a FILES_TO_SYMLINK=(
   '.config/awesome'
   '.config/base16-shell'

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 
 # https://github.com/nicksp/dotfiles/blob/master/setup.sh

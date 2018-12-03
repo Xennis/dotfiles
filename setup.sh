@@ -23,20 +23,6 @@ print_error() {
   printf "\\e[0;31m  [✖] %s %s\\e[0m\\n" "${1}" "${2}"
 }
 
-print_result() {
-  [ "${1}" -eq 0 ] \
-    && print_success "${2}" \
-    || print_error "${2}"
-
-  [ "${3}" == "true" ] && [ "${1}" -ne 0 ] \
-    && exit
-}
-
-execute() {
-  ${1} &> /dev/null
-  print_result $? "${2:-$1}"
-}
-
 
 ###############################################################################
 # Setup functions
@@ -86,8 +72,11 @@ create_symbolic_link() {
   local targetFile="${2}"
 
   if [ ! -e "${targetFile}" ]; then
-    execute "ln -fs ${sourceFile} ${targetFile}" "${targetFile} → ${sourceFile}"
-  elif [ "$(readlink "${targetFile}")" == "${sourceFile}" ]; then
+    ln -fs "${sourceFile}" "${targetFile}" &> /dev/null
+  fi
+
+  # Check success
+  if [ "$(readlink "${targetFile}")" == "${sourceFile}" ]; then
     print_success "${targetFile} → ${sourceFile}"
   else
     print_error "${targetFile} → ${sourceFile}"
@@ -117,14 +106,14 @@ DOTFILES_DIR="${HOME}/dotfiles"
 DOTFILES_BACKUP_DIR="${DOTFILES_DIR}_old"
 
 # Create directories for config files inside of subdirectories
-mkdir -p "${HOME}/.config/Code/User"
+mkdir -p "${HOME}/.config/Code - OSS/User"
 mkdir -p "${HOME}/.config/spotify/Users/xen_nis-user"
 
 declare -a FILES_TO_SYMLINK=(
   '.config/awesome'
   '.config/base16-shell'
-  '.config/Code/User/keybindings.json'
-  '.config/Code/User/settings.json'
+  '.config/Code - OSS/User/keybindings.json'
+  '.config/Code - OSS/User/settings.json'
   '.config/spotify/Users/xen_nis-user/prefs'
   '.config/terminator'
   '.config/termite'

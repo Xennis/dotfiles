@@ -5,5 +5,5 @@ alias untar='tar -xvzf'
 if command -v pacman > /dev/null; then
   alias pacman='sudo pacman --color=auto'
   # System update
-  alias update='pacman -Syu --noconfirm'
+  alias update='aur sync -u && pacman -Syu --noconfirm'
 fi

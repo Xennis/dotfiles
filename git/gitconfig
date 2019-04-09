@@ -22,10 +22,10 @@
     pager = cat
 [fetch]
     prune = true
+[include]
+    # Use separate file for username etc.
+    path = ~/.gitconfig.local
 [merge]
     tool = meld
 [push]
     default = matching
-[include]
-    # Use separate file for username etc.
-    path = ~/.gitconfig.local

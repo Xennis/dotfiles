@@ -20,6 +20,8 @@
 [core]
     editor = vim
     pager = cat
+[fetch]
+    prune = true
 [merge]
     tool = meld
 [push]

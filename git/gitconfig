@@ -1,31 +1,31 @@
 [alias]
-    br = branch
-    co = checkout
-    cp = cherry-pick
-    ls = log -5 --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
-    pu = !git pull --rebase && git submodule update
-    re = rebase --interactive
-    st = status
-    # Commit
-    ci = commit --message
-    cia = commit --all --message
-    aa = commit --all --amend --no-edit
-    amend = commit --amend
-    save = !git add -all && git commit -m 'SAVEPOINT'
-    wip = !git add --update && git commit --message "WIP"
-    wipe = !git add --all && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
-    search = log -5 --grep
-    # Gerrit
-    preview = !sh -c 'git push origin HEAD$2:refs/for/$1' -
+	br = branch
+	co = checkout
+	cp = cherry-pick
+	ls = log -5 --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	pu = !git pull --rebase && git submodule update
+	re = rebase --interactive
+	st = status
+	# Commit
+	ci = commit --message
+	cia = commit --all --message
+	aa = commit --all --amend --no-edit
+	amend = commit --amend
+	save = !git add -all && git commit -m 'SAVEPOINT'
+	wip = !git add --update && git commit --message "WIP"
+	wipe = !git add --all && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+	search = log -5 --grep
+	# Gerrit
+	preview = !sh -c 'git push origin HEAD$2:refs/for/$1' -
 [core]
-    editor = vim
-    pager = cat
+	editor = vim
+	pager = cat
 [fetch]
-    prune = true
+	prune = true
 [include]
-    # Use separate file for username etc.
-    path = ~/.gitconfig.local
+	# Use separate file for username etc.
+	path = ~/.gitconfig.local
 [merge]
-    tool = meld
+	tool = meld
 [push]
-    default = current
+	default = current

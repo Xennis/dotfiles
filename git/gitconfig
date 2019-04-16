@@ -28,4 +28,4 @@
 [merge]
     tool = meld
 [push]
-    default = matching
+    default = current

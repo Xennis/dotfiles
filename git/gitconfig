@@ -29,3 +29,5 @@
 	tool = meld
 [push]
 	default = current
+[diff "gpg"]
+	textconv = gpg --no-tty --decrypt

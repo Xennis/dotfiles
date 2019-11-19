@@ -15,7 +15,6 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 
 #### Dependencies
 
-* awesome: chromium, termite
 * git: vim, meld
 * zsh: powerline-fonts
 
@@ -24,4 +23,3 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 * Setup script based on [Nick Plekhanov's dotfiles](https://github.com/nicksp/dotfiles/)
 * Color scheme from
   * Terminator: [Solarized terminator colors](https://github.com/ghuntley/terminator-solarized)
-  * Termite: [Solarized color scheme for Termite](https://github.com/alpha-omega/termite-colors-solarized)

@@ -110,13 +110,11 @@ mkdir -p "${HOME}/.config/Code - OSS/User"
 mkdir -p "${HOME}/.config/spotify/Users/xen_nis-user"
 
 declare -a FILES_TO_SYMLINK=(
-  '.config/awesome'
   '.config/base16-shell'
   '.config/Code - OSS/User/keybindings.json'
   '.config/Code - OSS/User/settings.json'
   '.config/spotify/Users/xen_nis-user/prefs'
   '.config/terminator'
-  '.config/termite'
 
   'git/gitconfig'
 

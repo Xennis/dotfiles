@@ -6,6 +6,8 @@
 	pu = !git pull --rebase && git submodule update
 	re = rebase --interactive
 	st = status
+	rem = pull --rebase origin master
+	fp = !git rem && git push --force
 	# Commit
 	ci = commit --message
 	cia = commit --all --message

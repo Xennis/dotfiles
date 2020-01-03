@@ -1,3 +1,5 @@
+alias zgrep='zgrep --color=always'
+
 # Archive
 alias untar='tar -xvzf'
 

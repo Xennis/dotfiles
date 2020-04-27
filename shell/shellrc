@@ -10,5 +10,3 @@ fi
 if [ -f ~/.shellrc.local ]; then
     source ~/.shellrc.local
 fi
-
-# colors

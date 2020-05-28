@@ -120,9 +120,6 @@ declare -a FILES_TO_SYMLINK=(
 
   'shell/oh-my-zsh'
   'shell/bashrc'
-  'shell/shell_aliases'
-  'shell/shell_exports'
-  'shell/shell_functions'
   'shell/shellrc'
   'shell/zshrc'
 

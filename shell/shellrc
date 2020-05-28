@@ -1,12 +1,52 @@
-if [ -f ~/.shell_exports ]; then
-    source ~/.shell_exports
+###############################################################################
+# Exports
+###############################################################################
+
+# Preferred editor
+export EDITOR='vim'
+
+
+###############################################################################
+# Aliases
+###############################################################################
+
+alias zgrep='zgrep --color=always'
+
+# Archive
+alias untar='tar -xvzf'
+
+# Arch Linux only
+if command -v pacman > /dev/null; then
+  alias pacman='sudo pacman --color=auto'
+  # System update
+  alias update='aur sync -u && pacman -Syu --noconfirm'
+# Ubuntu only
+elif command -v apt-get > /dev/null; then
+  # System update
+  alias update='sudo apt-get update && sudo apt-get --yes upgrade && sudo apt-get autoremove'
 fi
-if [ -f ~/.shell_aliases ]; then
-    source ~/.shell_aliases
-fi
-if [ -f ~/.shell_functions ]; then
-    source ~/.shell_functions
-fi
+
+
+###############################################################################
+# Functions
+###############################################################################
+
+
+find() {
+    command find "$@" 2>/dev/null
+}
+
+# Set title of terminal
+set_terminal_title() {
+    echo -en "\033]0;$1\a"
+}
+
+
+###############################################################################
+# Source
+###############################################################################
+
+
 if [ -f ~/.shellrc.local ]; then
     source ~/.shellrc.local
 fi

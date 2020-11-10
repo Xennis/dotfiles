@@ -15,13 +15,8 @@ alias zgrep='zgrep --color=always'
 # Archive
 alias untar='tar -xvzf'
 
-# Arch Linux only
-if command -v pacman > /dev/null; then
-  alias pacman='sudo pacman --color=auto'
-  # System update
-  alias update='aur sync -u && pacman -Syu --noconfirm'
 # Ubuntu only
-elif command -v apt-get > /dev/null; then
+if command -v apt-get > /dev/null; then
   # System update
   alias update='sudo apt-get update && sudo apt-get --yes upgrade && sudo apt-get autoremove'
 fi

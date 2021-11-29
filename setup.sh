@@ -106,13 +106,10 @@ DOTFILES_DIR="${HOME}/dotfiles"
 DOTFILES_BACKUP_DIR="${DOTFILES_DIR}_old"
 
 # Create directories for config files inside of subdirectories
-mkdir -p "${HOME}/.config/Code - OSS/User"
 mkdir -p "${HOME}/.config/spotify/Users/xen_nis-user"
 
 declare -a FILES_TO_SYMLINK=(
   '.config/base16-shell'
-  '.config/Code - OSS/User/keybindings.json'
-  '.config/Code - OSS/User/settings.json'
   '.config/spotify/Users/xen_nis-user/prefs'
   '.config/terminator'
 

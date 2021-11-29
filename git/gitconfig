@@ -20,14 +20,16 @@
 [core]
 	editor = vim
 	pager = cat
+[diff "gpg"]
+	textconv = gpg --no-tty --decrypt
 [fetch]
 	prune = true
 [include]
 	# Use separate file for username etc.
 	path = ~/.gitconfig.local
+[init]
+	defaultBranch = main
 [merge]
 	tool = meld
 [push]
 	default = current
-[diff "gpg"]
-	textconv = gpg --no-tty --decrypt

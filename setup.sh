@@ -105,12 +105,8 @@ create_symbolic_links() {
 DOTFILES_DIR="${HOME}/dotfiles"
 DOTFILES_BACKUP_DIR="${DOTFILES_DIR}_old"
 
-# Create directories for config files inside of subdirectories
-mkdir -p "${HOME}/.config/spotify/Users/xen_nis-user"
-
 declare -a FILES_TO_SYMLINK=(
   '.config/base16-shell'
-  '.config/spotify/Users/xen_nis-user/prefs'
   '.config/terminator'
 
   'git/gitconfig'

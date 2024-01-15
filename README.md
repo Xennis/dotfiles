@@ -16,7 +16,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 #### Dependencies
 
 * git: vim, meld
-* zsh: powerline-fonts
+* zsh: fonts-powerline
 
 ## Resources
 

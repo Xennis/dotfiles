@@ -106,13 +106,11 @@ DOTFILES_DIR="${HOME}/dotfiles"
 DOTFILES_BACKUP_DIR="${DOTFILES_DIR}_old"
 
 declare -a FILES_TO_SYMLINK=(
-  '.config/base16-shell'
   '.config/terminator'
 
   'git/gitconfig'
 
   'shell/oh-my-zsh'
-  'shell/bashrc'
   'shell/shellrc'
   'shell/zshrc'
 

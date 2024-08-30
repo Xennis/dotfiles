@@ -2,7 +2,7 @@
 	br = branch
 	co = checkout
 	cp = cherry-pick
-	ls = log -5 --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	ls = log -5 --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%aN]" --decorate
 	pu = !git pull --rebase && git submodule update
 	re = rebase --interactive
 	st = status
@@ -33,3 +33,5 @@
 	tool = meld
 [push]
 	default = current
+[advice]
+	skippedCherryPicks = false

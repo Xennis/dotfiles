@@ -31,3 +31,8 @@ fi
 if [ -f ~/.zshrc.local ]; then
 	source ~/.zshrc.local
 fi
+
+# Software development
+if command -v mise >/dev/null 2>&1; then
+  eval "$(mise activate zsh)"
+fi

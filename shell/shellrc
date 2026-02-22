@@ -18,7 +18,7 @@ alias untar='tar -xvzf'
 # Ubuntu only
 if command -v apt-get > /dev/null; then
   # System update
-  alias update='sudo apt-get update && sudo apt-get --yes upgrade && sudo apt-get autoremove'
+  alias update='sudo apt-get update && sudo apt-get --yes upgrade && sudo apt-get autoremove && sudo snap refresh && npm install -g npm firebase-tools@latest @google/gemini-cli@latest'
 fi
 
 

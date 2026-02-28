@@ -24,15 +24,18 @@ prompt_dir() {
   prompt_segment blue black '%2~'
 }
 
+# Software development
+if command -v mise >/dev/null 2>&1; then
+  eval "$(mise activate zsh)"
+fi
+JETBRAINS_SCRIPTS="$HOME/.local/share/JetBrains/Toolbox/scripts"
+if [[ -d $JETBRAINS_SCRIPTS ]]; then
+  path=($JETBRAINS_SCRIPTS $path)
+fi
 
 if [ -f ~/.shellrc ]; then
 	source ~/.shellrc
 fi
 if [ -f ~/.zshrc.local ]; then
 	source ~/.zshrc.local
-fi
-
-# Software development
-if command -v mise >/dev/null 2>&1; then
-  eval "$(mise activate zsh)"
 fi
